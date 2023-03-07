@@ -1,49 +1,49 @@
 import random
 import time
 
-from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage
+from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage
 
 
-# class TestElements:
-#     class TestTextBox:
-#
-#         def test_test_box(self, driver):
-#             text_box_page = TextBoxPage(driver, 'https://demoqa.com/text-box')
-#             text_box_page.open()
-#             full_name, email, current_address, permanent_address = text_box_page.fill_all_fields()
-#             output_name, output_email, output_cur_addr, output_per_addr = text_box_page.check_filled_form()
-#             assert full_name == output_name, "the full_name does not match"
-#             assert email == output_email, "the email does not match"
-#             assert current_address == output_cur_addr, "the current_address does not match"
-#             assert permanent_address == output_per_addr,  "the permanent_address does not match"
-#
-# class TestCheckBox:
-#     def test_check_box(self, driver):
-#         check_box_page = CheckBoxPage(driver, 'https://demoqa.com/checkbox') #https://demoqa.com/checkbox
-#         check_box_page.open()
-#         check_box_page.open_full_list()
-#         check_box_page.click_random_checkbox()
-#         input_checkbox = check_box_page.get_checked_checkboxes()
-#         output_result = check_box_page.get_output_result()
-#         print(input_checkbox)
-#         print(output_result)
-#         assert input_checkbox == output_result, 'Checkboxes have not been selected'
-#
-#
-# class TestRadioButton:
-#
-#     def test_radio_button(self, driver):
-#         radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
-#         radio_button_page.open()
-#         radio_button_page.click_radio_button('yes')
-#         output_yes = radio_button_page.get_output_result()
-#         radio_button_page.click_radio_button('impressive')
-#         output_impressive = radio_button_page.get_output_result()
-#         radio_button_page.click_radio_button('no')
-#         output_no = radio_button_page.get_output_result()
-#         assert output_yes == 'Yes', 'Yes have been selected'
-#         assert output_impressive == 'Impressive', 'Impressive have been selected'
-#         assert output_no == 'No', 'No have been selected'
+class TestElements:
+    class TestTextBox:
+
+        def test_test_box(self, driver):
+            text_box_page = TextBoxPage(driver, 'https://demoqa.com/text-box')
+            text_box_page.open()
+            full_name, email, current_address, permanent_address = text_box_page.fill_all_fields()
+            output_name, output_email, output_cur_addr, output_per_addr = text_box_page.check_filled_form()
+            assert full_name == output_name, "the full_name does not match"
+            assert email == output_email, "the email does not match"
+            assert current_address == output_cur_addr, "the current_address does not match"
+            assert permanent_address == output_per_addr,  "the permanent_address does not match"
+
+class TestCheckBox:
+    def test_check_box(self, driver):
+        check_box_page = CheckBoxPage(driver, 'https://demoqa.com/checkbox') #https://demoqa.com/checkbox
+        check_box_page.open()
+        check_box_page.open_full_list()
+        check_box_page.click_random_checkbox()
+        input_checkbox = check_box_page.get_checked_checkboxes()
+        output_result = check_box_page.get_output_result()
+        print(input_checkbox)
+        print(output_result)
+        assert input_checkbox == output_result, 'Checkboxes have not been selected'
+
+
+class TestRadioButton:
+
+    def test_radio_button(self, driver):
+        radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
+        radio_button_page.open()
+        radio_button_page.click_radio_button('yes')
+        output_yes = radio_button_page.get_output_result()
+        radio_button_page.click_radio_button('impressive')
+        output_impressive = radio_button_page.get_output_result()
+        radio_button_page.click_radio_button('no')
+        output_no = radio_button_page.get_output_result()
+        assert output_yes == 'Yes', 'Yes have been selected'
+        assert output_impressive == 'Impressive', 'Impressive have been selected'
+        assert output_no == 'No', 'No have been selected'
 
 class TestWebTable:
 
@@ -91,6 +91,16 @@ class TestWebTable:
         assert  count == [5, 10, 20, 25, 50, 100], 'The number of rows in the table has not been changed or has changed incorectly '
 
 
+class TestButtons:
+    def test_different_ckick_on_the_buttons(self, driver):
+        buttons_page = ButtonsPage(driver, 'https://demoqa.com/buttons')
+        buttons_page.open()
+        double = buttons_page.click_on_defferent_button('double')
+        right = buttons_page.click_on_defferent_button('right')
+        click = buttons_page.click_on_defferent_button('click')
+        assert double == 'You have done a double click', 'The double click button was not pressed'
+        assert right == 'You have done a right click', 'The right click button was not pressed'
+        assert click == 'You have done a dynamic click', 'The dynamic click button was not pressed'
 
 
 
