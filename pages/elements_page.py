@@ -221,7 +221,7 @@ class UploadAndDownloadPage(BasePage):
     def download_file(self):
         link = self.element_is_present(self.locators.DOWNLOAD_FILE).get_attribute('href')
         link_b = base64.b64decode(link)
-        path_name_file = rf'C:\Users\Home\PycharmProjects\automation_qa_course\filetest{random.randint(0, 999)}.jpg'
+        path_name_file = rf'C:\Users\Fantomas\PycharmProjects\automation_qa_course\filetest{random.randint(0, 999)}.jpg'
         with open(path_name_file, 'wb+') as f:
             offset = link_b.find(b'\xff\xd8')
             f.write(link_b[offset:])
