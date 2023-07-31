@@ -1,3 +1,5 @@
+import random
+
 from selenium.webdriver.common.by import By
 
 class TextBoxPageLocators:
@@ -86,6 +88,20 @@ class DynamicPropertiesLocators:
     ENABLE_BUTTON = (By.CSS_SELECTOR, 'button[id="enableAfter"]')
     COLOR_CHANGE_BUTTON = (By.CSS_SELECTOR, 'button[id="colorChange"]')
     VISIBLE_AFTER_FIVE_SECONDS = (By.CSS_SELECTOR, 'button[id="visibleAfter"]')
+
+class PracticeLocators:
+    FIRST_NAME = (By.CSS_SELECTOR, "input[id='firstName']")
+    LAST_NAME = (By.CSS_SELECTOR, "input[id='lastName']")
+    EMAIL = (By.CSS_SELECTOR, "input[id='userEmail']")
+    GENDER = (By.CSS_SELECTOR, f"label[for='gender-radio-{random.randint(1, 3)}']")
+    MOBILE = (By.CSS_SELECTOR, "input[id='userNumber']")
+    DATE_OF_BIRTH = (By.CSS_SELECTOR, "input[id='dateOfBirthInput']")
+    MONTH = (By.CSS_SELECTOR, f".react-datepicker__month-select option[value='{random.randint(0,11)}']")
+    YEAR = (By.CSS_SELECTOR, f".react-datepicker__year-select option[value='{random.randint(1900, 2023)}']")
+
+
+
+
 
 
 

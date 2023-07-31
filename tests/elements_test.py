@@ -2,7 +2,7 @@ import random
 import time
 
 from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage, LinksPage, \
-    UploadAndDownloadPage, DynamicPropertiesPage
+    UploadAndDownloadPage, DynamicPropertiesPage, PracticePage
 
 
 class TestElements:
@@ -153,7 +153,12 @@ class TestDynamicPropertiesPage:
         enable_button = dynamic_properties_page.check_enable_button()
         assert enable_button is True
 
+class TestPracticePage:
 
+    def test_practice_form(self, driver):
+        practice_form = PracticePage(driver, "https://demoqa.com/automation-practice-form")
+        practice_form.open()
+        practice_form.check_practice_form()
 
 
 

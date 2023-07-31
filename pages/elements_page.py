@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from generator.generator import generated_person, generated_file
 from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, RadioButtonLocators, \
     WebTablePageLocators, ButtonsPageLocators, LinksPageLocators, UploadAndDownloadPageLocators, \
-    DynamicPropertiesLocators
+    DynamicPropertiesLocators, PracticeLocators
 from pages.base_page import BasePage
 from selenium.webdriver.support.ui import Select
 
@@ -255,6 +255,25 @@ class DynamicPropertiesPage(BasePage):
         except TimeoutException:
             return False
         return True
+
+
+class PracticePage(BasePage):
+
+    locators = PracticeLocators()
+
+    def check_practice_form(self):
+        person = next(generated_person())
+        first_name = person.firstname
+        last_name = person.lastname
+        email = person.email
+        self.element_is_visible(self.locators.FIRST_NAME).send_keys(first_name)
+        self.element_is_visible(self.locators.LAST_NAME).send_keys(last_name)
+        self.element_is_visible(self.locators.EMAIL).send_keys(email)
+        self.element_is_visible(self.locators.GENDER).click()
+        self.element_is_visible(self.locators.DATE_OF_BIRTH).click()
+        self.element_is_visible(self.locators.MONTH).click()
+        self.element_is_visible(self.locators.YEAR).click()
+        time.sleep(5)
 
 
 
