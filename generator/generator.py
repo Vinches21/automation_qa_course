@@ -26,3 +26,8 @@ def generated_file():
     file.write(f'Hello World{random.randint(0, 999)}')
     file.close()
     return file.name, path
+
+
+def generated_picture():
+    path = rf'C:\Users\Fantomas\PycharmProjects\automation_qa_course\parser_2.jpg'
+    return path

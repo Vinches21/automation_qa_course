@@ -96,9 +96,14 @@ class PracticeLocators:
     GENDER = (By.CSS_SELECTOR, f"label[for='gender-radio-{random.randint(1, 3)}']")
     MOBILE = (By.CSS_SELECTOR, "input[id='userNumber']")
     DATE_OF_BIRTH = (By.CSS_SELECTOR, "input[id='dateOfBirthInput']")
-    MONTH = (By.CSS_SELECTOR, f".react-datepicker__month-select option[value='{random.randint(0,11)}']")
-    YEAR = (By.CSS_SELECTOR, f".react-datepicker__year-select option[value='{random.randint(1900, 2023)}']")
-    DAY = (By.CSS_SELECTOR, "[class='react-datepicker__day react-datepicker__day--022']")
+    MONTH = (By.CSS_SELECTOR, f".react-datepicker__month-select option[value='{9}']")
+    YEAR = (By.CSS_SELECTOR, f".react-datepicker__year-select option[value='{1993}']")
+    DAY = (By.CSS_SELECTOR, "[class='react-datepicker__day react-datepicker__day--021']")
+    SUBJECTS = (By.CSS_SELECTOR, "input[id='subjectsInput']")
+    HOBBIES = (By.CSS_SELECTOR, f"label[for='hobbies-checkbox-{random.randint(1,3)}']")
+    PICTURE = (By.CSS_SELECTOR, "input[id='uploadPicture']")
+    CURRENT_ADDRESS = (By.CSS_SELECTOR, "textarea[id='currentAddress']")
+    STATE = (By.CSS_SELECTOR, "[class=' css-1hwfws3']")
 
 
 

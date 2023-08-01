@@ -5,9 +5,10 @@ import random
 
 import requests
 from selenium.common import TimeoutException
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
-from generator.generator import generated_person, generated_file
+from generator.generator import generated_person, generated_file, generated_picture
 from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, RadioButtonLocators, \
     WebTablePageLocators, ButtonsPageLocators, LinksPageLocators, UploadAndDownloadPageLocators, \
     DynamicPropertiesLocators, PracticeLocators
@@ -267,15 +268,26 @@ class PracticePage(BasePage):
         last_name = person.lastname
         email = person.email
         mobile = person.mobile
+        address = person.current_address
         self.element_is_visible(self.locators.FIRST_NAME).send_keys(first_name)
         self.element_is_visible(self.locators.LAST_NAME).send_keys(last_name)
         self.element_is_visible(self.locators.EMAIL).send_keys(email)
         self.element_is_visible(self.locators.GENDER).click()
-        self.element_is_visible(self.locators.MOBILE).send_keys()
+        self.element_is_visible(self.locators.MOBILE).send_keys(mobile)
         self.element_is_visible(self.locators.DATE_OF_BIRTH).click()
         self.element_is_visible(self.locators.MONTH).click()
         self.element_is_visible(self.locators.YEAR).click()
         self.element_is_visible(self.locators.DAY).click()
+        self.element_is_visible(self.locators.SUBJECTS).send_keys('e')
+        self.element_is_visible(self.locators.SUBJECTS).send_keys(Keys.RETURN)
+        self.element_is_clickable(self.locators.HOBBIES).click()
+        path = generated_picture()
+        self.element_is_visible(self.locators.PICTURE).send_keys(path)
+        self.element_is_visible(self.locators.CURRENT_ADDRESS).send_keys(address)
+        state = self.element_is_visible(self.locators.STATE)
+        self.go_to_element(state)
+        state.click()
+        state.send_keys(Keys.ENTER)
         time.sleep(5)
 
 
