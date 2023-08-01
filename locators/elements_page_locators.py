@@ -98,7 +98,7 @@ class PracticeLocators:
     DATE_OF_BIRTH = (By.CSS_SELECTOR, "input[id='dateOfBirthInput']")
     MONTH = (By.CSS_SELECTOR, f".react-datepicker__month-select option[value='{random.randint(0,11)}']")
     YEAR = (By.CSS_SELECTOR, f".react-datepicker__year-select option[value='{random.randint(1900, 2023)}']")
-
+    DAY = (By.CSS_SELECTOR, "[class='react-datepicker__day react-datepicker__day--022']")
 
 
 

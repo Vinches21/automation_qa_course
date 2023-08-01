@@ -266,13 +266,16 @@ class PracticePage(BasePage):
         first_name = person.firstname
         last_name = person.lastname
         email = person.email
+        mobile = person.mobile
         self.element_is_visible(self.locators.FIRST_NAME).send_keys(first_name)
         self.element_is_visible(self.locators.LAST_NAME).send_keys(last_name)
         self.element_is_visible(self.locators.EMAIL).send_keys(email)
         self.element_is_visible(self.locators.GENDER).click()
+        self.element_is_visible(self.locators.MOBILE).send_keys()
         self.element_is_visible(self.locators.DATE_OF_BIRTH).click()
         self.element_is_visible(self.locators.MONTH).click()
         self.element_is_visible(self.locators.YEAR).click()
+        self.element_is_visible(self.locators.DAY).click()
         time.sleep(5)
 
 
