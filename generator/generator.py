@@ -2,8 +2,8 @@ import random
 
 from data.data import Person
 from faker import Faker
-
 faker_ru = Faker('ru_RU')
+
 
 
 def generated_person():
@@ -12,11 +12,12 @@ def generated_person():
         firstname=faker_ru.first_name(),
         lastname=faker_ru.last_name(),
         age=random.randint(10, 80),
-        salary= random.randint(50000, 100000),
+        salary=random.randint(50000, 100000),
         department=faker_ru.job(),
-        email= faker_ru.email(),
-        current_address= faker_ru.address(),
-        permanent_address= faker_ru.address()
+        email=faker_ru.email(),
+        current_address=faker_ru.address(),
+        permanent_address=faker_ru.address(),
+        mobile=random.randint(90000000000, 99999999999)
     )
 
 def generated_file():
