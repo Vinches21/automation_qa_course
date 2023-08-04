@@ -47,3 +47,9 @@ class BasePage:
         action = ActionChains(self.driver)
         action.context_click(element)
         action.perform()
+
+    """Метод для удаления футера"""
+
+    def remove_footer(self):
+        self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();") #удаляем баннер
+        self.driver.execute_script("document.getElementById('close-fixedban').remove();") #удаляем кнопку под баннером

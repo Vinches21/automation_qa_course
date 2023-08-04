@@ -21,7 +21,7 @@ def generated_person():
     )
 
 def generated_file():
-    path = rf'C:\Users\Home\PycharmProjects\automation_qa_course\filetest{random.randint(0, 999)}.txt'
+    path = rf'C:\Users\Фантомас\PycharmProjects\automation_qa_course\filetest{random.randint(0, 999)}.txt'
     file = open(path, 'w+')
     file.write(f'Hello World{random.randint(0, 999)}')
     file.close()
@@ -29,5 +29,5 @@ def generated_file():
 
 
 def generated_picture():
-    path = rf'C:\Users\Fantomas\PycharmProjects\automation_qa_course\parser_2.jpg'
+    path = rf'C:\Users\Фантомас\PycharmProjects\automation_qa_course\Мособоивизитка  в печать 3.cdr'
     return path

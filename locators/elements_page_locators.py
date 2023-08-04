@@ -103,8 +103,11 @@ class PracticeLocators:
     HOBBIES = (By.CSS_SELECTOR, f"label[for='hobbies-checkbox-{random.randint(1,3)}']")
     PICTURE = (By.CSS_SELECTOR, "input[id='uploadPicture']")
     CURRENT_ADDRESS = (By.CSS_SELECTOR, "textarea[id='currentAddress']")
-    STATE = (By.CSS_SELECTOR, "[class=' css-1hwfws3']")
+    STATE = (By.CSS_SELECTOR, "input[id='react-select-3-input']")
+    CITY = (By.CSS_SELECTOR, "input[id='react-select-4-input']")
+    SUBMIT = (By.CSS_SELECTOR, "button[id='submit']")
 
+    RESULT_TABLE = (By.XPATH, "//div[@class='table-responsive']//td[2]")
 
 
 
