@@ -296,6 +296,14 @@ class PracticePage(BasePage):
         self.go_to_element(submit)
         submit.click()
         return person
+    
+    def form_result(self):
+        result_list = self.elements_are_present(self.locators.RESULT_TABLE)
+        data = []
+        for i in result_list:
+            self.go_to_element(i)
+            data.append(i.text)
+        return data
 
 
 
