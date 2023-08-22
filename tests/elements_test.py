@@ -158,10 +158,9 @@ class TestPracticePage:
     def test_practice_form(self, driver):
         practice_form = PracticePage(driver, "https://demoqa.com/automation-practice-form")
         practice_form.open()
-        person_info = practice_form.check_practice_form()
+        p = practice_form.check_practice_form()
         result = practice_form.form_result()
-        print(person_info)
-        print(result)
+        assert [p.firstname + " " + p.lastname, p.email] == [result[0], result[1]], "Не совпадают данные"
 
 
 
