@@ -53,3 +53,9 @@ class BasePage:
     def remove_footer(self):
         self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();") #удаляем баннер
         self.driver.execute_script("document.getElementById('close-fixedban').remove();") #удаляем кнопку под баннером
+
+    """Метод для управления в новой вкладке"""
+
+    def switch_new_tab(self):
+        new_window = self.driver.window_handles[1]
+        self.driver.switch_to.window(new_window)
