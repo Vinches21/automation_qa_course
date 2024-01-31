@@ -1,7 +1,7 @@
 import time
 from random import randint as rd
 
-from pages.alerts_frame_windows_pages import BrowserWindowsPage, AlertsPage
+from pages.alerts_frame_windows_pages import BrowserWindowsPage, AlertsPage, FramePage
 
 
 class TestAlertsFrameWindow:
@@ -15,7 +15,7 @@ class TestAlertsFrameWindow:
             assert text_result == "This is a sample page", "The new tab has not opened or incorrect tab has opened"
 
 
-    class TestAlertsPage():
+    class TestAlertsPage:
 
         def test_see_alert(self, driver):
             alert_page = AlertsPage(driver, 'https://demoqa.com/alerts')
@@ -40,3 +40,15 @@ class TestAlertsFrameWindow:
             alert_page.open()
             text, alert_text = alert_page.check_prompt_alert()
             assert text in alert_text, 'Alert did not show up'
+
+    class TestFramePage:
+
+        def test_frames(self, driver):
+            frame_page = FramePage(driver, 'https://demoqa.com/frames')
+            frame_page.open()
+            result_frame1 = frame_page.check_frame('frame1')
+            result_frame_2 = frame_page.check_frame('frame2')
+            assert result_frame1 == ['This is a sample page', '500px', '350px'], 'The frame does not exist'
+            assert result_frame_2 == ['This is a sample page', '100px', '100px'], 'The frame does not exist'
+            print(result_frame1)
+
