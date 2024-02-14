@@ -1,6 +1,7 @@
 import time
 from random import randint as rd
 
+from conftest import pytest_html_report_title
 from pages.alerts_frame_windows_pages import BrowserWindowsPage, AlertsPage, FramePage, NestedFramesPage
 
 
@@ -56,11 +57,10 @@ class TestAlertsFrameWindow:
     class TestNestesFramesPage:
 
         def test_nested_frames(self, driver):
+            """Начало"""
             nested_frame_page = NestedFramesPage(driver, "https://demoqa.com/nestedframes")
             nested_frame_page.open()
             parent_text, child_text = nested_frame_page.check_nested_frame()
-            print(parent_text)
-            print(child_text)
             assert parent_text == "Parent frame", "No"
             assert child_text == "Child Iframe", "No"
 
